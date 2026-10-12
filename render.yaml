@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: causalfunnel-user-analytics-api
+    runtime: node
+    rootDir: .
+    buildCommand: npm install --prefix server && npm --prefix server run build
+    startCommand: npm --prefix server start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: DEMO_SITE_URL
+        sync: false

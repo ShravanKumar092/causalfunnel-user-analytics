@@ -44,3 +44,6 @@ desktop.ini
 # Temporary / scratch
 tmp/
 temp/
+
+# Vercel local metadata
+.vercel/

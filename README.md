@@ -23,19 +23,15 @@ The demo calls the SDK at `http://localhost:5000/api`; for another deployment se
 
 ### Deployment and known limits
 
-Set `NODE_ENV=production`, `MONGODB_URI`, `PORT`, and `CLIENT_ORIGIN` on the API host. `CLIENT_ORIGIN` must list every dashboard and tracked-site origin. Build the dashboard with `npm --prefix client run build`; deploy `client/dist` to Vercel/Netlify and set `VITE_API_BASE_URL` to the deployed API's `/api` URL before building. The dashboard has no authentication; restrict access appropriately. There is no hosted deployment or GitHub remote configured in this workspace.
+Set `NODE_ENV=production`, `MONGODB_URI`, and `CLIENT_ORIGIN` on the API host. `CLIENT_ORIGIN` must list the dashboard and demo origins. The source is published at [github.com/ShravanKumar092/causalfunnel-user-analytics](https://github.com/ShravanKumar092/causalfunnel-user-analytics); no hosted deployment is configured yet. The dashboard has no authentication; restrict access appropriately.
 
 The dashboard and Express API source are TypeScript. Tailwind CSS is configured alongside the existing authored design-system CSS, and Vitest/React Testing Library cover the dashboard's sessions, journey, heatmap, and API-error states. The backend suite uses Jest/Supertest and an ephemeral MongoDB test server; it needs a MongoDB binary present or downloadable. A production MongoDB URI is required outside tests; development does not silently fall back to ephemeral storage.
 
-GitHub publication commands after creating an authorized empty repository:
+Clone the published repository:
 
-```bash
-git init
-git add .
-git commit -m "Build user analytics application"
-git branch -M main
-git remote add origin <your-repository-url>
-git push -u origin main
+```powershell
+git clone https://github.com/ShravanKumar092/causalfunnel-user-analytics.git
+cd causalfunnel-user-analytics
 ```
 
 ## Table of Contents
@@ -197,7 +193,7 @@ funneltrack/
 │   │   └── main.tsx            # React root entrypoint
 │   ├── package.json
 │   ├── .env.example
-│   └── vite.config.js
+│   └── vite.config.ts
 │
 ├── server/                     # Express.js REST API & Ingestion Engine
 │   ├── src/
@@ -675,15 +671,14 @@ npm run preview
 3. Copy the connection string: `mongodb+srv://<user>:<password>@cluster0.mongodb.net/funneltrack?retryWrites=true&w=majority`.
 
 ### 2. Backend: Render.com
-1. Create a new **Web Service** pointing to your repository.
-2. Root Directory: repository root (the API serves the SDK from `tracker/`).
-3. Build Command: `npm install --prefix server && npm --prefix server run build`.
-4. Start Command: `npm --prefix server start`.
-5. Environment Variables:
+1. Create a new **Blueprint** in Render and select this repository; `render.yaml` defines the API service, build/start commands, and health check. Or create a Web Service manually with the repository root as its root directory (the API serves the SDK from `tracker/`).
+2. If configuring manually, use build command `npm install --prefix server && npm --prefix server run build` and start command `npm --prefix server start`.
+3. Set these environment variables in Render (Blueprint prompts for values marked `sync: false`):
    - `NODE_ENV`: `production`
-   - `PORT`: `5000`
    - `MONGODB_URI`: `<Your MongoDB Atlas connection URI>`
-   - `CLIENT_ORIGIN`: comma-separated dashboard and tracked-site origins, for example `https://your-frontend.vercel.app,https://shop.example.com`
+   - `CLIENT_ORIGIN`: comma-separated dashboard and demo origins, for example `https://your-dashboard.vercel.app,https://your-demo.vercel.app`
+   - `DEMO_SITE_URL`: your deployed demo origin, for example `https://your-demo.vercel.app`
+   Render supplies `PORT`; do not set it manually unless the platform requires it.
 
 ### 3. Frontend: Vercel
 1. Import repository on [vercel.com](https://vercel.com).
@@ -693,6 +688,27 @@ npm run preview
 5. Output Directory: `dist`.
 6. Environment Variables:
    - `VITE_API_BASE_URL`: `https://your-backend.onrender.com/api`
+
+The Vercel project includes `client/vercel.json` to route dashboard deep links to the SPA entry point.
+
+### 4. Demo store: Vercel
+1. Create a second Vercel project from the same GitHub repository.
+2. Set its **Root Directory** to `tracker`; the included `tracker/vercel.json` serves `demo.html` at the root URL.
+3. Before deploying, add this configuration before the tracker script in `tracker/demo.html`, replacing the URL with your Render service:
+
+```html
+<script>
+  window.CAUSALFUNNEL_CONFIG = {
+    apiUrl: "https://YOUR-RENDER-SERVICE.onrender.com/api",
+    debug: false
+  };
+</script>
+```
+
+4. Commit and push that URL change, then redeploy the demo. Add both the dashboard URL and demo URL to Render's `CLIENT_ORIGIN`; set `DEMO_SITE_URL` to the demo URL as well.
+5. Verify `https://YOUR-RENDER-SERVICE.onrender.com/api/health`, open the demo, click around, and confirm sessions and heatmaps in the dashboard.
+
+Hosting still requires your Atlas connection string and account access to Render/Vercel. Do not commit those credentials. The tracker defaults to localhost for local development and reads `window.CAUSALFUNNEL_CONFIG.apiUrl` when configured for deployment.
 
 ---
 

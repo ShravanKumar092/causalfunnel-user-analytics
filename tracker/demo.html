@@ -430,10 +430,10 @@
     (function () {
       // 1. Initialize FunnelTrack SDK
       FunnelTrack.init({
-        apiUrl: 'http://localhost:5000/api',
+          apiUrl: window.CAUSALFUNNEL_CONFIG?.apiUrl || 'http://localhost:5000/api',
         trackPageViews: true,
         trackClicks: true,
-        debug: true
+          debug: window.CAUSALFUNNEL_CONFIG?.debug ?? window.location.hostname === 'localhost'
       });
 
       // 2. State for demo interactions
