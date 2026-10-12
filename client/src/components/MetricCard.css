@@ -1,0 +1,92 @@
+.metric-card {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metric-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.metric-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.metric-card:hover .metric-icon-wrap {
+  transform: scale(1.08);
+}
+
+.metric-body {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.metric-value {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.metric-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-hover);
+  color: var(--text-secondary);
+}
+
+.metric-helper {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Color Variants */
+.variant-primary .metric-icon-wrap {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.variant-secondary .metric-icon-wrap {
+  background: var(--secondary-light);
+  color: var(--secondary);
+}
+
+.variant-accent .metric-icon-wrap {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.variant-success .metric-icon-wrap {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.variant-warning .metric-icon-wrap {
+  background: var(--warning-light);
+  color: var(--warning);
+}

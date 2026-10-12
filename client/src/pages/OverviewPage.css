@@ -1,0 +1,82 @@
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  padding: 20px 24px;
+}
+
+.card-header {
+  margin-bottom: 16px;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.sessions-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.session-id-cell {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.duration-text {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.view-journey-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.clickable-row:hover .view-journey-btn {
+  background: var(--primary);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

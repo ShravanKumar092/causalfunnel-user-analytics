@@ -1,0 +1,28 @@
+{
+  "name": "funneltrack-monorepo",
+  "version": "1.0.0",
+  "description": "FunnelTrack — User Behavior Analytics Platform (CausalFunnel Assignment)",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "start": "npm --prefix server start",
+    "server": "npm --prefix server start",
+    "dev:server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "dev:client": "npm --prefix client run dev",
+    "test": "npm --prefix server test",
+    "test:tracker": "node --test tracker/funneltrack.test.js",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "test:client": "npm --prefix client test",
+    "test:all": "npm test && npm run test:tracker && npm run test:client"
+  },
+  "keywords": [
+    "analytics",
+    "tracking",
+    "heatmap",
+    "funnel",
+    "user-journey"
+  ],
+  "author": "FunnelTrack Engineering",
+  "license": "MIT"
+}

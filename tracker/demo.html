@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraMarket — Premium Lifestyle & Tech (FunnelTrack Demo)</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Announcement">
+    <span class="announcement-badge">Live Analytics</span>
+    <span>Tracked by <strong>FunnelTrack SDK</strong>. Every click and view is recorded in MongoDB!</span>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar" id="main-navigation">
+      <a href="#home" class="brand-logo" id="nav-brand">
+        <div class="brand-icon">A</div>
+        <span>AuraMarket</span>
+      </a>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#all" class="nav-link active" data-category="all" id="nav-link-all">All Products</a></li>
+        <li><a href="#audio" class="nav-link" data-category="audio" id="nav-link-audio">Audio & Sound</a></li>
+        <li><a href="#keyboards" class="nav-link" data-category="keyboards" id="nav-link-keyboards">Keyboards</a></li>
+        <li><a href="#workspace" class="nav-link" data-category="workspace" id="nav-link-workspace">Workspace</a></li>
+        <li><a href="#deals" class="nav-link" data-category="deals" id="nav-link-deals">Special Deals</a></li>
+      </ul>
+
+      <div class="search-container">
+        <input type="text" class="search-input" id="search-input" placeholder="Search gadgets, audio, desk gear...">
+        <button class="search-btn" id="search-submit-btn" aria-label="Search">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="wishlist-btn" title="Wishlist">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+
+        <button class="icon-btn" id="cart-btn" title="Shopping Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-tag" id="hero-tag">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+        New Studio Workspace Release
+      </div>
+      <h1>Elevate Your Everyday Space</h1>
+      <p>Handcrafted mechanical keyboards, acoustic audiophile hardware, and minimalist desktop architecture crafted for effortless focus.</p>
+      
+      <div class="hero-buttons">
+        <a href="#products-section" class="btn btn-primary" id="hero-cta-shop">Shop Curated Gear</a>
+        <button class="btn btn-secondary" id="hero-cta-deals">Browse 20% Off Specials</button>
+      </div>
+
+      <div class="hero-perks">
+        <div class="perk-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          Free Worldwide Shipping ($75+)
+        </div>
+        <div class="perk-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          3-Year Precision Guarantee
+        </div>
+        <div class="perk-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          Hassle-Free 30-Day Returns
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Store Content -->
+  <main class="main-content" id="products-section">
+    <!-- Category & Filter Header -->
+    <div class="section-header">
+      <div class="section-title">
+        <h2>Featured Hardware & Accessories</h2>
+        <p>Interactive catalog designed to produce authentic user journey clicks and views.</p>
+      </div>
+
+      <div class="filter-pills" id="category-filters">
+        <button class="pill active" data-filter="all" id="pill-all">All</button>
+        <button class="pill" data-filter="audio" id="pill-audio">Audio & Sound</button>
+        <button class="pill" data-filter="keyboards" id="pill-keyboards">Keyboards</button>
+        <button class="pill" data-filter="workspace" id="pill-workspace">Workspace</button>
+        <button class="pill" data-filter="power" id="pill-power">Power & Hubs</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-grid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-category="audio" id="prod-card-1">
+        <div class="product-image-wrap">
+          <span class="product-tag">Best Seller</span>
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="1.5"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Audio & Sound</span>
+          <h3 class="product-title">Aura Wave ANC Pro Studio Headphones</h3>
+          <div class="product-rating">
+            <span>★★★★★</span>
+            <span class="rating-count">(4.9 • 128 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>289.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="1" data-name="Aura Wave ANC Pro Studio Headphones" data-price="289.00" id="qv-btn-1">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="1" data-name="Aura Wave ANC Pro" id="add-btn-1">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-category="keyboards" id="prod-card-2">
+        <div class="product-image-wrap">
+          <span class="product-tag">Staff Pick</span>
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"></path></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Keyboards</span>
+          <h3 class="product-title">Horizon Q1 CNC Aluminum Custom Keyboard</h3>
+          <div class="product-rating">
+            <span>★★★★★</span>
+            <span class="rating-count">(4.8 • 94 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>179.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="2" data-name="Horizon Q1 CNC Aluminum Custom Keyboard" data-price="179.00" id="qv-btn-2">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="2" data-name="Horizon Q1 Keyboard" id="add-btn-2">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-category="workspace" id="prod-card-3">
+        <div class="product-image-wrap">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5"><path d="M12 2v8M4.93 4.93l5.66 5.66M2 12h8M4.93 19.07l5.66-5.66M12 22v-8M19.07 19.07l-5.66-5.66M22 12h-8M19.07 4.93l-5.66 5.66"></path></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Workspace</span>
+          <h3 class="product-title">Lumina Glow Minimal Dynamic Desk Lamp</h3>
+          <div class="product-rating">
+            <span>★★★★☆</span>
+            <span class="rating-count">(4.7 • 62 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>89.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="3" data-name="Lumina Glow Minimal Dynamic Desk Lamp" data-price="89.00" id="qv-btn-3">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="3" data-name="Lumina Glow Lamp" id="add-btn-3">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-category="workspace" id="prod-card-4">
+        <div class="product-image-wrap">
+          <span class="product-tag">Eco Walnut</span>
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Workspace</span>
+          <h3 class="product-title">ErgoFloat Handcrafted Solid Walnut Monitor Stand</h3>
+          <div class="product-rating">
+            <span>★★★★★</span>
+            <span class="rating-count">(5.0 • 45 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>119.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="4" data-name="ErgoFloat Handcrafted Solid Walnut Monitor Stand" data-price="119.00" id="qv-btn-4">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="4" data-name="ErgoFloat Stand" id="add-btn-4">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="product-card" data-category="workspace" id="prod-card-5">
+        <div class="product-image-wrap">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Workspace</span>
+          <h3 class="product-title">StudioDesk Merino Wool Felt XL Desk Mat</h3>
+          <div class="product-rating">
+            <span>★★★★☆</span>
+            <span class="rating-count">(4.6 • 88 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>49.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="5" data-name="StudioDesk Merino Wool Felt XL Desk Mat" data-price="49.00" id="qv-btn-5">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="5" data-name="StudioDesk Mat" id="add-btn-5">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="product-card" data-category="power" id="prod-card-6">
+        <div class="product-image-wrap">
+          <span class="product-tag">GaN Tech</span>
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Power & Hubs</span>
+          <h3 class="product-title">NovaPod 65W GaN Compact Travel Fast Charger</h3>
+          <div class="product-rating">
+            <span>★★★★★</span>
+            <span class="rating-count">(4.9 • 110 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>45.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="6" data-name="NovaPod 65W GaN Compact Travel Fast Charger" data-price="45.00" id="qv-btn-6">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="6" data-name="NovaPod Charger" id="add-btn-6">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 7 -->
+      <article class="product-card" data-category="audio" id="prod-card-7">
+        <div class="product-image-wrap">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"></rect><circle cx="12" cy="14" r="4"></circle><line x1="12" y1="6" x2="12.01" y2="6"></line></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Audio & Sound</span>
+          <h3 class="product-title">EchoSound Studio Reference Active Monitors</h3>
+          <div class="product-rating">
+            <span>★★★★★</span>
+            <span class="rating-count">(4.9 • 37 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>349.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="7" data-name="EchoSound Studio Reference Active Monitors" data-price="349.00" id="qv-btn-7">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="7" data-name="EchoSound Monitors" id="add-btn-7">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 8 -->
+      <article class="product-card" data-category="keyboards" id="prod-card-8">
+        <div class="product-image-wrap">
+          <span class="product-tag">Wireless</span>
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="1.5"><rect x="6" y="3" width="12" height="18" rx="6"></rect><line x1="12" y1="7" x2="12" y2="10"></line></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Keyboards</span>
+          <h3 class="product-title">Aura Precision Ergonomic Silent Mouse</h3>
+          <div class="product-rating">
+            <span>★★★★☆</span>
+            <span class="rating-count">(4.7 • 53 reviews)</span>
+          </div>
+          <div class="product-bottom">
+            <div class="price"><span class="price-currency">$</span>95.00</div>
+            <div class="card-actions">
+              <button class="btn btn-secondary btn-sm quick-view-btn" data-id="8" data-name="Aura Precision Ergonomic Silent Mouse" data-price="95.00" id="qv-btn-8">Quick View</button>
+              <button class="btn btn-primary btn-sm add-to-cart-btn" data-id="8" data-name="Aura Mouse" id="add-btn-8">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Promotional Section -->
+    <section class="promo-section" id="promo-banner">
+      <div class="promo-content">
+        <h3>Save 20% on Your First Order</h3>
+        <p>Use code below at checkout. Every coupon copy and click is tracked in FunnelTrack and reflected on the heatmap.</p>
+      </div>
+      <div class="promo-action">
+        <div class="coupon-box" id="coupon-code">AURAFUNNEL20</div>
+        <button class="btn btn-primary" id="copy-coupon-btn">Copy Coupon Code</button>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter-section">
+      <h3>Join the Studio Dispatch</h3>
+      <p>Receive weekly curate drops, workspace setups, and exclusive subscriber hardware discounts.</p>
+      <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+        <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary" id="newsletter-submit-btn">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="brand-logo">
+          <div class="brand-icon">A</div>
+          <span>AuraMarket</span>
+        </a>
+        <p>Designing tools and acoustics for creators, programmers, and studio professionals.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#keyboards" id="footer-link-kb">Keyboards</a></li>
+          <li><a href="#audio" id="footer-link-audio">Audio</a></li>
+          <li><a href="#workspace" id="footer-link-desk">Desks & Racks</a></li>
+          <li><a href="#deals" id="footer-link-deals">Sale Items</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about" id="footer-link-about">About Us</a></li>
+          <li><a href="#sustainability" id="footer-link-eco">Sustainability</a></li>
+          <li><a href="#careers" id="footer-link-careers">Careers</a></li>
+          <li><a href="#press" id="footer-link-press">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq" id="footer-link-faq">Help Center</a></li>
+          <li><a href="#shipping" id="footer-link-shipping">Shipping & Returns</a></li>
+          <li><a href="#warranty" id="footer-link-warranty">Warranty</a></li>
+          <li><a href="#contact" id="footer-link-contact">Contact Team</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 AuraMarket Inc. Built for CausalFunnel Full Stack Engineer Assessment.</div>
+      <div>Telemetry powered by FunnelTrack SDK v1.0.0</div>
+    </div>
+  </footer>
+
+  <!-- Cart and wishlist drawer -->
+  <div class="drawer-backdrop" id="commerce-drawer" aria-hidden="true">
+    <aside class="commerce-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer-header">
+        <div><span class="drawer-eyebrow">AURAMARKET</span><h2 id="drawer-title">Your Cart</h2></div>
+        <button class="drawer-close" id="drawer-close-btn" type="button" aria-label="Close panel">&times;</button>
+      </div>
+      <div class="drawer-content" id="drawer-content"></div>
+    </aside>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quick-view-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-product-title">Product Name</h3>
+        <button class="close-btn" id="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-price" id="modal-product-price">$0.00</div>
+        <p class="modal-desc" id="modal-product-desc">Precision engineered components crafted with premium acoustic dampening, modular hot-swap sockets, and sustainable anodized metal.</p>
+        
+        <div class="modal-options">
+          <label style="font-weight: 600; font-size: 0.9rem;">Quantity:</label>
+          <div class="qty-stepper">
+            <button class="qty-btn" id="qty-minus">-</button>
+            <span class="qty-val" id="qty-value">1</span>
+            <button class="qty-btn" id="qty-plus">+</button>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px;">
+          <button class="btn btn-primary" style="flex: 1;" id="modal-add-cart-btn">Add to Bag</button>
+          <button class="btn btn-secondary" id="modal-checkout-btn">Direct Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- FunnelTrack Live Tracker Inspector Bar (Floating Dock) -->
+  <div class="funneltrack-dock" id="funneltrack-dock">
+    <div class="dock-status">
+      <div class="status-dot"></div>
+      <span>FunnelTrack Active</span>
+    </div>
+    <div class="dock-session" id="dock-session-id" title="Click to copy full Session ID">
+      Session: <span id="dock-session-val">Initializing...</span>
+    </div>
+    <div class="dock-stats">
+      <span>Clicks: <span class="dock-stat-val" id="dock-clicks-val">0</span></span>
+      <span>Views: <span class="dock-stat-val" id="dock-views-val">0</span></span>
+    </div>
+    <div class="dock-actions">
+      <button class="dock-btn" id="dock-reset-btn" title="Start a fresh session with a new Session ID">↻ New Session</button>
+      <a href="http://localhost:5173" target="_blank" class="dock-btn" id="dock-dashboard-btn" title="Open the React Analytics Dashboard">Open Dashboard ↗</a>
+    </div>
+  </div>
+
+  <!-- FunnelTrack Tracking SDK Script -->
+  <script src="funneltrack.js"></script>
+
+  <!-- Demo Page Logic & FunnelTrack Initialization -->
+  <script>
+    (function () {
+      // 1. Initialize FunnelTrack SDK
+      FunnelTrack.init({
+        apiUrl: 'http://localhost:5000/api',
+        trackPageViews: true,
+        trackClicks: true,
+        debug: true
+      });
+
+      // 2. State for demo interactions
+      let cartItems = [];
+      const wishlistItems = new Map();
+      let drawerMode = 'cart';
+      let clickCount = 0;
+      let viewCount = 1; // Initial page load
+      let activeProduct = null;
+      let quantity = 1;
+
+      // DOM Elements
+      const cartCountEl = document.getElementById('cart-count');
+      const wishlistCountEl = document.getElementById('wishlist-count');
+      const drawer = document.getElementById('commerce-drawer');
+      const drawerTitle = document.getElementById('drawer-title');
+      const drawerContent = document.getElementById('drawer-content');
+      const toastContainer = document.getElementById('toast-container');
+      const dockSessionVal = document.getElementById('dock-session-val');
+      const dockClicksVal = document.getElementById('dock-clicks-val');
+      const dockViewsVal = document.getElementById('dock-views-val');
+      const modal = document.getElementById('quick-view-modal');
+      const modalTitle = document.getElementById('modal-product-title');
+      const modalPrice = document.getElementById('modal-product-price');
+      const qtyValEl = document.getElementById('qty-value');
+
+      // Display initial session
+      const currentSessionId = FunnelTrack.getSessionId();
+      dockSessionVal.textContent = currentSessionId.substring(0, 8) + '...';
+      dockSessionVal.title = 'Full Session ID: ' + currentSessionId;
+      dockViewsVal.textContent = viewCount;
+
+      // Subscribe to real-time tracked events for live inspector dock
+      FunnelTrack.onEventTracked(function (event) {
+        if (event.event_type === 'click') {
+          clickCount++;
+          dockClicksVal.textContent = clickCount;
+        } else if (event.event_type === 'page_view') {
+          dockViewsVal.textContent = ++viewCount;
+        }
+      });
+
+      // Toast helper
+      function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = '<span>✓</span> ' + message;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transition = 'opacity 0.3s ease';
+          setTimeout(() => toast.remove(), 300);
+        }, 2500);
+      }
+
+      function getProductFromCard(card) {
+        const action = card.querySelector('.quick-view-btn');
+        if (!action) return null;
+        const priceText = card.querySelector('.price')?.textContent || '';
+        const price = Number(priceText.replace(/[^\d.]/g, '')) || 0;
+        return {
+          id: action.getAttribute('data-id'),
+          name: card.querySelector('.product-title')?.textContent.trim() || 'Product',
+          price
+        };
+      }
+
+      const products = new Map(Array.from(document.querySelectorAll('.product-card'))
+        .map((card) => getProductFromCard(card))
+        .filter(Boolean)
+        .map((product) => [product.id, product]));
+
+      function updateCounts() {
+        cartCountEl.textContent = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        wishlistCountEl.textContent = wishlistItems.size;
+        document.querySelectorAll('.wishlist-toggle').forEach((button) => {
+          const saved = wishlistItems.has(button.dataset.id);
+          button.classList.toggle('saved', saved);
+          button.setAttribute('aria-pressed', String(saved));
+          button.title = saved ? 'Remove from wishlist' : 'Add to wishlist';
+        });
+      }
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (char) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[char]));
+      }
+
+      function renderDrawer() {
+        const isCart = drawerMode === 'cart';
+        const items = isCart ? cartItems : Array.from(wishlistItems.values());
+        drawerTitle.textContent = isCart ? 'Your Cart' : 'Your Wishlist';
+        if (!items.length) {
+          drawerContent.innerHTML = `<div class="drawer-empty"><div class="drawer-empty-icon">${isCart ? '🛒' : '♡'}</div><h3>${isCart ? 'Your cart is empty' : 'Your wishlist is empty'}</h3><p>${isCart ? 'Find something you love and add it to your bag.' : 'Tap a heart on any product to save it here.'}</p><button class="btn btn-primary drawer-continue" type="button" data-action="continue">Continue shopping</button></div>`;
+          return;
+        }
+
+        drawerContent.innerHTML = items.map((item) => {
+          const product = item.product || item;
+          return `<article class="drawer-item">
+            <div class="drawer-item-icon">${escapeHtml(product.name.slice(0, 1))}</div>
+            <div class="drawer-item-info"><strong>${escapeHtml(product.name)}</strong><span>$${product.price.toFixed(2)}</span>
+              ${isCart ? `<div class="drawer-quantity"><button type="button" data-action="decrease" data-id="${escapeHtml(product.id)}" aria-label="Decrease quantity">−</button><span>${item.quantity}</span><button type="button" data-action="increase" data-id="${escapeHtml(product.id)}" aria-label="Increase quantity">+</button></div>` : ''}
+            </div>
+            <button type="button" class="drawer-remove" data-action="${isCart ? 'remove-cart' : 'remove-wishlist'}" data-id="${escapeHtml(product.id)}">Remove</button>
+            ${!isCart ? `<button type="button" class="drawer-add" data-action="wishlist-add-cart" data-id="${escapeHtml(product.id)}">Add to cart</button>` : ''}
+          </article>`;
+        }).join('') + (isCart ? `<div class="drawer-footer"><div class="drawer-subtotal"><span>Subtotal</span><strong>$${cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0).toFixed(2)}</strong></div><button class="btn btn-primary drawer-checkout" type="button" data-action="checkout">Continue to checkout</button><p>Shipping and taxes calculated at checkout.</p></div>` : '');
+      }
+
+      function openDrawer(mode) {
+        drawerMode = mode;
+        renderDrawer();
+        drawer.classList.add('active');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('drawer-open');
+        document.getElementById('drawer-close-btn').focus();
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('active');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('drawer-open');
+      }
+
+      function addProductToCart(product, count = 1) {
+        if (!product) return;
+        const existing = cartItems.find((item) => item.product.id === product.id);
+        if (existing) existing.quantity += count;
+        else cartItems.push({ product, quantity: count });
+        updateCounts();
+      }
+
+      document.getElementById('wishlist-btn').addEventListener('click', () => openDrawer('wishlist'));
+      document.getElementById('cart-btn').addEventListener('click', () => openDrawer('cart'));
+      document.getElementById('drawer-close-btn').addEventListener('click', closeDrawer);
+      drawer.addEventListener('click', (event) => {
+        if (event.target === drawer) closeDrawer();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && drawer.classList.contains('active')) closeDrawer();
+      });
+
+      document.querySelectorAll('.product-card').forEach((card) => {
+        const product = getProductFromCard(card);
+        const button = document.createElement('button');
+        button.className = 'wishlist-toggle';
+        button.type = 'button';
+        button.dataset.id = product.id;
+        button.setAttribute('aria-label', 'Add ' + product.name + ' to wishlist');
+        button.setAttribute('aria-pressed', 'false');
+        button.innerHTML = '<span aria-hidden="true">♡</span>';
+        button.addEventListener('click', () => {
+          if (wishlistItems.has(product.id)) wishlistItems.delete(product.id);
+          else wishlistItems.set(product.id, product);
+          updateCounts();
+          if (drawerMode === 'wishlist' && drawer.classList.contains('active')) renderDrawer();
+          showToast(wishlistItems.has(product.id) ? 'Saved to your wishlist.' : 'Removed from your wishlist.');
+        });
+        card.querySelector('.product-image-wrap').appendChild(button);
+      });
+      updateCounts();
+
+      drawerContent.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-action]');
+        if (!button) return;
+        const { action, id } = button.dataset;
+        const cartItem = cartItems.find((item) => item.product.id === id);
+        if (action === 'continue') closeDrawer();
+        if (action === 'increase' && cartItem) cartItem.quantity++;
+        if (action === 'decrease' && cartItem) {
+          cartItem.quantity--;
+          if (cartItem.quantity <= 0) cartItems = cartItems.filter((item) => item !== cartItem);
+        }
+        if (action === 'remove-cart') cartItems = cartItems.filter((item) => item.product.id !== id);
+        if (action === 'remove-wishlist') wishlistItems.delete(id);
+        if (action === 'wishlist-add-cart') addProductToCart(wishlistItems.get(id));
+        if (action === 'checkout') {
+          showToast('Checkout is ready for ' + cartItems.reduce((sum, item) => sum + item.quantity, 0) + ' item(s).');
+          closeDrawer();
+        }
+        updateCounts();
+        if (action !== 'continue' && action !== 'checkout') renderDrawer();
+      });
+
+      // Add to Cart handler
+      document.querySelectorAll('.add-to-cart-btn').forEach((btn) => {
+        btn.addEventListener('click', function (e) {
+          const product = products.get(this.getAttribute('data-id'));
+          addProductToCart(product);
+          showToast('Added ' + (product?.name || 'Item') + ' to your cart!');
+        });
+      });
+
+      // Quick View handler
+      document.querySelectorAll('.quick-view-btn').forEach((btn) => {
+        btn.addEventListener('click', function () {
+          activeProduct = {
+            id: this.getAttribute('data-id'),
+            name: this.getAttribute('data-name'),
+            price: this.getAttribute('data-price')
+          };
+          modalTitle.textContent = activeProduct.name;
+          modalPrice.textContent = '$' + activeProduct.price;
+          quantity = 1;
+          qtyValEl.textContent = quantity;
+          modal.classList.add('active');
+        });
+      });
+
+      // Close modal
+      document.getElementById('modal-close-btn').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+
+      // Stepper
+      document.getElementById('qty-minus').addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          qtyValEl.textContent = quantity;
+        }
+      });
+      document.getElementById('qty-plus').addEventListener('click', () => {
+        quantity++;
+        qtyValEl.textContent = quantity;
+      });
+
+      document.getElementById('modal-add-cart-btn').addEventListener('click', () => {
+        addProductToCart(activeProduct && products.get(activeProduct.id), quantity);
+        showToast('Added ' + quantity + 'x ' + (activeProduct ? activeProduct.name : 'product') + ' to cart!');
+        modal.classList.remove('active');
+      });
+
+      document.getElementById('modal-checkout-btn').addEventListener('click', () => {
+        showToast('Proceeding to checkout with ' + quantity + ' item(s)...');
+        modal.classList.remove('active');
+      });
+
+      // Filter pills
+      const pills = document.querySelectorAll('.pill');
+      const cards = document.querySelectorAll('.product-card');
+      pills.forEach((pill) => {
+        pill.addEventListener('click', function () {
+          pills.forEach((p) => p.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-filter');
+
+          cards.forEach((card) => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Nav Links filtering
+      document.querySelectorAll('.nav-link').forEach((link) => {
+        link.addEventListener('click', function (e) {
+          document.querySelectorAll('.nav-link').forEach((l) => l.classList.remove('active'));
+          this.classList.add('active');
+          const cat = this.getAttribute('data-category');
+          if (cat) {
+            const correspondingPill = document.getElementById('pill-' + cat);
+            if (correspondingPill) correspondingPill.click();
+          }
+        });
+      });
+
+      // Search input
+      document.getElementById('search-submit-btn').addEventListener('click', () => {
+        const query = document.getElementById('search-input').value.trim();
+        if (query) {
+          showToast('Filtering catalog for: "' + query + '"');
+        }
+      });
+
+      // Copy coupon
+      document.getElementById('copy-coupon-btn').addEventListener('click', () => {
+        const code = document.getElementById('coupon-code').textContent;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(code).then(() => {
+            showToast('Copied coupon "' + code + '" to clipboard!');
+          });
+        } else {
+          showToast('Copied coupon: ' + code);
+        }
+      });
+
+      // Newsletter
+      document.getElementById('newsletter-submit-btn').addEventListener('click', () => {
+        const input = document.getElementById('newsletter-email');
+        if (input.value && input.checkValidity()) {
+          showToast('Thanks for subscribing to AuraMarket!');
+          input.value = '';
+        } else {
+          showToast('Please enter a valid email address.');
+        }
+      });
+
+      // New Session reset button in dock
+      document.getElementById('dock-reset-btn').addEventListener('click', () => {
+        const newSession = FunnelTrack.resetSession();
+        dockSessionVal.textContent = newSession.substring(0, 8) + '...';
+        dockSessionVal.title = 'Full Session ID: ' + newSession;
+        clickCount = 0;
+        viewCount = 1;
+        dockClicksVal.textContent = clickCount;
+        dockViewsVal.textContent = viewCount;
+        showToast('Created new session: ' + newSession.substring(0, 8) + '...');
+      });
+
+      // Copy session ID on click
+      document.getElementById('dock-session-id').addEventListener('click', () => {
+        const id = FunnelTrack.getSessionId();
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(id).then(() => {
+            showToast('Session ID copied to clipboard!');
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

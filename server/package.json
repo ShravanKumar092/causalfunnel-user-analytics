@@ -1,0 +1,47 @@
+{
+  "name": "funneltrack-server",
+  "version": "1.0.0",
+  "description": "FunnelTrack Backend REST API and Analytics Engine",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "npm run build && node --watch dist/server.js",
+    "test": "npm run build && cross-env NODE_ENV=test MONGOMS_DOWNLOAD_DIR=.cache/mongodb-binaries jest --runInBand --detectOpenHandles --forceExit"
+  },
+  "keywords": [
+    "analytics",
+    "tracking",
+    "funnel",
+    "heatmap",
+    "express",
+    "mongoose"
+  ],
+  "author": "FunnelTrack Engineering",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "mongoose": "^8.12.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.25",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^26.6.5",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0",
+    "typescript": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 30000,
+    "verbose": true
+  }
+}

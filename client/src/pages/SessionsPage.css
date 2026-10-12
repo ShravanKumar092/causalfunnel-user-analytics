@@ -1,0 +1,86 @@
+.sessions-content {
+  overflow: hidden;
+}
+
+.sessions-toolbar {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--bg-surface);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 340px;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+}
+
+.search-input-field {
+  width: 100%;
+  padding: 8px 14px 8px 36px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: 0.86rem;
+  background: var(--bg-subtle);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.search-input-field:focus {
+  background: var(--bg-surface);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.session-count-indicator {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.session-id-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-id-text {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.copy-id-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  color: var(--text-muted);
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.copy-id-btn:hover {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.journey-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+}
