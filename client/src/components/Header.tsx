@@ -65,7 +65,7 @@ export const Header = ({ title, subtitle, onRefresh, isRefreshing }) => {
 
         {/* Demo Link */}
         <a
-          href="http://localhost:5500/demo.html"
+          href="https://causalfunnel-user-analytics-tracker.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-secondary btn-sm store-link-btn"
