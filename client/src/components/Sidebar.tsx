@@ -56,7 +56,7 @@ export const Sidebar = () => {
             Interact with the store to generate real-time analytics events.
           </p>
           <a
-            href="http://localhost:5500/demo.html"
+            href="https://causalfunnel-user-analytics-tracker.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary btn-sm launcher-btn"
