@@ -418,7 +418,7 @@
     </div>
     <div class="dock-actions">
       <button class="dock-btn" id="dock-reset-btn" title="Start a fresh session with a new Session ID">↻ New Session</button>
-      <a href="http://localhost:5173" target="_blank" class="dock-btn" id="dock-dashboard-btn" title="Open the React Analytics Dashboard">Open Dashboard ↗</a>
+      <a href="https://causalfunnel-user-analytics-1-14ku.onrender.com" target="_blank" class="dock-btn" id="dock-dashboard-btn" title="Open the React Analytics Dashboard">Open Dashboard ↗</a>
     </div>
   </div>
 
@@ -432,7 +432,7 @@
       const tracker = window.FunnelTrack;
       try {
         tracker?.init({
-          apiUrl: window.CAUSALFUNNEL_CONFIG?.apiUrl || 'http://localhost:5000/api',
+          apiUrl: window.CAUSALFUNNEL_CONFIG?.apiUrl || 'https://qwewewqewqsqsasqsxqwqw.onrender.com/api',
           trackPageViews: true,
           trackClicks: true,
           debug: window.CAUSALFUNNEL_CONFIG?.debug ?? window.location.hostname === 'localhost'
