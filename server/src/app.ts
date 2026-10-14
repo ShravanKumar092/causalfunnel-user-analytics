@@ -29,7 +29,7 @@ const corsOptions = {
   credentials: false
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // HTTP request logging (suppressed in test environment)
 if (process.env.NODE_ENV !== 'test') {
