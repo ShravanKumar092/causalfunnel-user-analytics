@@ -403,6 +403,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
 .product-card:hover .product-img {
@@ -678,6 +679,7 @@ body.drawer-open { overflow: hidden; }
 .drawer-continue { margin-top: 24px; }
 .drawer-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--gray-100); }
 .drawer-item-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--gray-100); color: var(--primary); font-size: 1.1rem; font-weight: 800; }
+.drawer-product-image { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; background: var(--gray-100); }
 .drawer-item-info { display: grid; gap: 5px; min-width: 0; color: var(--gray-800); }
 .drawer-item-info strong { font-size: 0.88rem; line-height: 1.35; }
 .drawer-item-info > span { color: var(--primary); font-size: 0.88rem; font-weight: 700; }

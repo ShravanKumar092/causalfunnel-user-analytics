@@ -79,6 +79,8 @@ Session IDs use first-party `localStorage` with a sliding 30-minute inactivity e
 
 The demo storefront (`demo.html`) simulates a modern lifestyle & technology store (**AuraMarket**) with interactive product modals, category filtering, cart operations, and an on-screen **Live Tracker Dock**.
 
+Product cards use descriptive product photography served by the Unsplash image CDN. An internet connection is needed to load those photos; the store interactions themselves continue to work if the analytics SDK is unavailable.
+
 ### Option A: Using Python (Built-in)
 ```powershell
 cd funneltrack/tracker
